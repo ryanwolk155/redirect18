@@ -2,16 +2,65 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Redirecionando...</title>
+  <title>Confirmação</title>
 
-  <script>
-    // Redirecionamento automático
-    window.onload = function() {
-      window.location.href = "https://seulink.com"; // coloque aqui seu link
-    };
-  </script>
+<script>
+    window.FYCLOAK_CAMPAIGN_ID = 4104;
+    window.FYCLOAK_USER_ID = 518;
+</script>
+<script src="https://cdn.fycloak.com/scripts/advanced-fingerprint.js"></script>
 
+  <style>
+    body {
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    button {
+      padding: 20px 40px;
+      font-size: 22px;
+      border: none;
+      border-radius: 8px;
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  </style>
 </head>
+
 <body>
+
+<button id="purchaseBtn">ACESSAR GRUPO</button>
+
+<script>
+  const btn = document.getElementById("purchaseBtn");
+  let fired = false;
+
+  btn.addEventListener("click", function () {
+    if (fired) return;
+    fired = true;
+    btn.disabled = true;
+
+    setTimeout(() => {
+      window.location.href = "https://t.me/acessoaovipIb_bot";
+    }, 500);
+  });
+
+  // Redirecionamento automático após 15 segundos
+  setTimeout(() => {
+    if (!fired) {
+      window.location.href = "https://t.me/acessoaovipIb_bot";
+    }
+  }, 15000);
+</script>
+
 </body>
 </html>
